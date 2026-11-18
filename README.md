@@ -102,26 +102,4 @@ workshop-003-kafka-ml/
 
 ---
 
-## 4. Guía de Ejecución y Verificación
 
-### Opción A: Ejecución en Google Colab (Entrega Recomendada)
-1. Sube el archivo `notebooks/Workshop_003_Kafka_ML.ipynb` a Google Colab.
-2. Ejecuta todas las celdas secuencialmente (`group.id = "laura-vanessa-torres-valencia"` y `sasl.password` ya están configurados).
-
-### Opción B: Ejecución Local (Repositorio Modular en Python)
-1. Crear entorno virtual e instalar dependencias:
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # En Windows: .venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-2. Ejecutar el pipeline ETL + ML completo:
-   ```bash
-   python main.py
-   ```
-3. Verificar resultados en la base de datos SQLite (`data/happiness_predictions.db`) ejecutando las consultas incluidas en `sql/queries.sql`.
-4. *(Opcional)* Iniciar el consumidor de inferencia continua y el panel de monitoreo en Streamlit:
-   ```bash
-   python -m src.streaming_inference
-   streamlit run src/dashboard.py
-   ```
